@@ -1,0 +1,37 @@
+@keyframes alarm-blink {
+    0% {
+        filter: drop-shadow(0 0 0 rgba(239, 68, 68, 0));
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        filter: drop-shadow(0 0 8px rgba(239, 68, 68, 0.8));
+        opacity: 0.7;
+        transform: scale(1.1);
+    }
+
+    100% {
+        filter: drop-shadow(0 0 0 rgba(239, 68, 68, 0));
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.alarm-blink svg {
+    animation: alarm-blink 1.5s infinite ease-in-out;
+    transform-origin: 12px 21px;
+    display: block;
+}
+
+.focused-marker svg {
+    transform: scale(1.6) !important;
+    transform-origin: 12px 21px;
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5)) !important;
+    z-index: 1000 !important;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.focused-marker {
+    z-index: 1000 !important;
+}
